@@ -23,6 +23,12 @@ namespace calc
         {
 
         }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox12.Text = "";
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -36,6 +42,24 @@ namespace calc
 
             firstNum = Convert.ToDouble(firstArgument);
             secondNum = Convert.ToDouble(secondArgument);
+            
+            double calc = Creatror(operation);
+            double result = calc;
+            if (operation == "Степень")
+            {
+                if(firstNum < 0)
+                {
+                    textBox12.Text = "Число должно быть > 0";
+                }
+            }
+            if (operation == "Деление")
+            {
+                if(secondNum == 0)
+                {
+                    textBox12.Text = "На ноль делить нельзя";
+                }
+            }    
+            textBox12.Text = result.ToString();
         }
     }
 }
