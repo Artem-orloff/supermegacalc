@@ -50,6 +50,7 @@ namespace calc
                 if(firstNum < 0)
                 {
                     textBox12.Text = "Число должно быть > 0";
+                    return;
                 }
             }
             if (operation == "Деление")
@@ -57,6 +58,7 @@ namespace calc
                 if(secondNum == 0)
                 {
                     textBox12.Text = "На ноль делить нельзя";
+                    return;
                 }
             }    
             textBox12.Text = result.ToString();
